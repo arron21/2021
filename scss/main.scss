@@ -3,12 +3,12 @@
   padding: 0;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap");
 
 body {
-    overflow: clip;
-    font-size: 18px;
-    font-family: 'Montserrat', sans-serif;
+  overflow: clip;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
 }
 .container {
   display: grid;
@@ -16,6 +16,12 @@ body {
   grid-template-columns: 1fr 1fr;
   overflow: hidden;
   overflow-y: visible;
+
+  @media screen and (max-width: 780px) {
+    display: block;
+    overflow: visible;
+    height: auto;
+  }
 }
 
 h1 {
@@ -28,11 +34,22 @@ h1 {
   transform: rotate(-14deg);
   width: 100vw;
   font-weight: 900;
+  @media screen and (max-width: 780px) {
+    left: 0;
+    color: rgba(0, 0, 0, 0.6);
+
+    position: relative;
+    transform: rotate(0deg);
+    padding: 16px;
+  }
 }
 .left {
   display: flex;
   // align-items: center;
   padding: 0 10vw;
+  @media screen and (max-width: 780px) {
+    padding: 0 1em;
+  }
   justify-content: center;
   flex-direction: column;
 
@@ -42,7 +59,7 @@ h1 {
     position: relative;
 
     &:after {
-      content: '';
+      content: "";
       height: 4px;
       width: 50%;
       position: absolute;
@@ -56,26 +73,34 @@ h1 {
   .blurb {
     margin-top: 3em;
     p {
-        line-height: 1.5em;
+      line-height: 1.5em;
     }
   }
 }
 
 .grid-container {
-    overflow-y: clip;
+  overflow-y: clip;
 }
 .grid {
   transform: rotate(4deg);
+  @media screen and (max-width: 780px) {
+    transform: rotate(0deg);
+    padding: 16px;
+    > div {
+      padding: 1em;
+    }
+  }
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 8px;
+  grid-gap: 4px;
   height: 100%;
+  font-size: 14px;
 
   a {
-      color: gold;
+    color: gold;
   }
   > div {
-      box-shadow: 0 0 4px rgba(0,0,0,.2);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -86,7 +111,7 @@ h1 {
 
   .ms-Icon {
     font-size: 2.5em;
-    margin: .25em;
+    margin: 0.25em;
   }
 }
 
